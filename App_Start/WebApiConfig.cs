@@ -13,7 +13,7 @@ namespace SistemeTeShperndaraGR7.App_Start
             configuration.MapHttpAttributeRoutes();
             configuration.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
+                routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional });
         }
     }

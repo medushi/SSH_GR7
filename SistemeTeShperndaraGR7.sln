@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemeTeShperndaraGR7.Data
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingOnly", "..\TestingOnly\TestingOnly.csproj", "{940D706A-A989-4473-91F6-7CDF98C39E23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotifierWorker", "..\NotifierWorker\NotifierWorker.csproj", "{99646B98-831A-4D4F-9342-8229AD441BA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{940D706A-A989-4473-91F6-7CDF98C39E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{940D706A-A989-4473-91F6-7CDF98C39E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{940D706A-A989-4473-91F6-7CDF98C39E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99646B98-831A-4D4F-9342-8229AD441BA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99646B98-831A-4D4F-9342-8229AD441BA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99646B98-831A-4D4F-9342-8229AD441BA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99646B98-831A-4D4F-9342-8229AD441BA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
