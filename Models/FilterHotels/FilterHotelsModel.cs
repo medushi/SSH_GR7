@@ -11,7 +11,8 @@ namespace SistemeTeShperndaraGR7.Models.FilterHotels
         public string ReservationStartDate { get; set; }
         public string ReservationEndDate { get; set; }
         public int Rating { get; set; }
-        public int HasIncludedFreeMeal { get; set; }
+        public string HasIncludedFreeMeal { get; set; }
         public string Location { get; set; }
+        public string HasParking { get; set; }
     }
 }

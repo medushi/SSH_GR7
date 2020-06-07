@@ -205,7 +205,7 @@
                                     <div class="select-this">
                                         <form action="#">
                                             <div class="select-itms">
-                                                <select name="select" id="select1">
+                                                <select name="select" id="hotel-includedmeal">
                                                     <option value="0" selected>Te gjitha</option>
                                                     <option value="1">Jo</option>
                                                     <option value="2">Po</option>
@@ -220,7 +220,7 @@
                                     </div>
                                     <div class="select-this">
                                         <form action="#">
-                                            <div class="select-itms">
+                                            <div class="select-itms" id="hotel-parking">
                                                 <select name="select" id="select1">
                                                     <option value="0" selected>Te gjitha</option>
                                                     <option value="1">Pa parking</option>
@@ -237,7 +237,7 @@
                                     <div class="select-this">
                                         <form action="#">
                                             <div class="select-itms">
-                                                <select name="select" id="select1">
+                                                <select name="select" id="hotel-location">
                                                     <option value="0" selected>Te gjitha</option>
                                                     <option value="PR">Prishtine</option>
                                                     <option value="MR">Mitrovice</option>
@@ -273,7 +273,7 @@
                         <!--font-back-tittle  -->
                         <div class="font-back-tittle mb-45">
                             <div class="archivment-front">
-                                <h3>Our Rooms</h3>
+                                <h3 id="archivment-front">Our Rooms</h3>
                             </div>
                             <h3 class="archivment-back">Our Rooms</h3>
                         </div>
@@ -541,6 +541,36 @@
         $('#filter-hotels').on('click', function () {
             var data1 = $('#datepicker1').datepicker("show").val();
             console.log(data1);
+        });
+
+        $('#filter-hotels').on('click', function () {
+            var ReservationStartDate = $('#datepicker1').datepicker("show").val();
+            var ReservationEndDate = $('#datepicker2').datepicker("show").val();
+            var Rating = $('hotel-rating-chooser option:selected').text();
+            var HasIncludedFreeMeal = $('hotel-included-meal option:selected').text();
+            var Location = $('hotel-location option:selected').text();
+            var HasParking = $('hotel-parking option:selected').text();
+
+            var apiUrl = 'https://localhost:44396/api/Reservation/FilterHotels'
+
+            $.ajax({
+
+                url: apiUrl + "?ReservationStartDate=" + ReservationStartDate,
+                contentType: "application/json",
+                method:'POST',
+                dataType:'json',
+                success: function (result) {
+                    console.log(result);
+
+                    $.each(result, function (i, obj) {
+                        //use obj.id and obj.name here, for example:
+                        $('.archivment-front').text(obj.location);
+                        alert(obj.location);
+                        console.log(obj.location);
+                    });
+                }
+            });
+
         });
     </script>
 </body>
