@@ -149,7 +149,7 @@
         <!-- Booking Room Start-->
         <div class="booking-area">
             <div class="container">
-                <div class="row ">
+                <div class="row " id="hotelsGrid">
                     <div class="col-12">
                         <form action="">
                             <div class="booking-wrap d-flex justify-content-between align-items-center">
@@ -206,9 +206,9 @@
                                         <form action="#">
                                             <div class="select-itms">
                                                 <select name="select" id="hotel-includedmeal">
-                                                    <option value="0" selected>Te gjitha</option>
-                                                    <option value="1">Jo</option>
-                                                    <option value="2">Po</option>
+                                                    <option value="2" selected>Te gjitha</option>
+                                                    <option value="0">Jo</option>
+                                                    <option value="1">Po</option>
                                                 </select>
                                             </div>
                                         </form>
@@ -222,9 +222,9 @@
                                         <form action="#">
                                             <div class="select-itms" id="hotel-parking">
                                                 <select name="select" id="select1">
-                                                    <option value="0" selected>Te gjitha</option>
-                                                    <option value="1">Pa parking</option>
-                                                    <option value="2">Me parking</option>
+                                                    <option value="2" selected>Te gjitha</option>
+                                                    <option value="0">Pa parking</option>
+                                                    <option value="1">Me parking</option>
                                                 </select>
                                             </div>
                                         </form>
@@ -238,11 +238,11 @@
                                         <form action="#">
                                             <div class="select-itms">
                                                 <select name="select" id="hotel-location">
-                                                    <option value="0" selected>Te gjitha</option>
-                                                    <option value="PR">Prishtine</option>
-                                                    <option value="MR">Mitrovice</option>
-                                                    <option value="PZ">Prizren</option>
-                                                    <option value="PJ">Peje</option>
+                                                    <option value="All" selected>Te gjitha</option>
+                                                    <option value="Prishtine">Prishtine</option>
+                                                    <option value="Mitrovice">Mitrovice</option>
+                                                    <option value="Prizren">Prizren</option>
+                                                    <option value="Peje">Peje</option>
                                                 </select>
                                             </div>
                                         </form>
@@ -267,187 +267,20 @@
         <!-- Make customer End-->
         <!-- Room Start -->
         <section class="room-area" style="margin-top:200px;">
-            <div class="container">
+            <div class="container" style="width:1600px;">
                 <div class="row justify-content-center">
                     <div class="col-xl-8">
                         <!--font-back-tittle  -->
                         <div class="font-back-tittle mb-45">
                             <div class="archivment-front">
-                                <h3 id="archivment-front">Our Rooms</h3>
+                                <h3 id="archivment-front">Lista nga filtrimi</h3>
                             </div>
-                            <h3 class="archivment-back">Our Rooms</h3>
+                            <h3 class="archivment-back">Lista nga filtrimi</h3>
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"><img src="assets/img/rooms/room1.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>boking-datepicker
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"><img src="assets/img/rooms/room2.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room3.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"><img src="assets/img/rooms/room4.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"><img src="assets/img/rooms/room5.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!-- Single Room -->
-                        <div class="single-room mb-50">
-                            <div class="room-img">
-                                <a href="rooms.html"> <img src="assets/img/rooms/room6.jpg" alt=""></a>
-                            </div>
-                            <div class="room-caption">
-                                <h3><a href="rooms.html">Classic Double Bed</a></h3>
-                                <div class="per-night">
-                                    <span><u>$</u>150 <span>/ par night</span></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="hotelsGrid">
+                   
                 </div>
             </div>
 
@@ -546,16 +379,28 @@
         $('#filter-hotels').on('click', function () {
             var ReservationStartDate = $('#datepicker1').datepicker("show").val();
             var ReservationEndDate = $('#datepicker2').datepicker("show").val();
-            var Rating = $('hotel-rating-chooser option:selected').text();
-            var HasIncludedFreeMeal = $('hotel-included-meal option:selected').text();
-            var Location = $('hotel-location option:selected').text();
-            var HasParking = $('hotel-parking option:selected').text();
+            var Rating = $('#hotel-rating-chooser option:selected').val();
+            var HasIncludedFreeMeal = $('#hotel-includedmeal option:selected').val();
+            var Location = $('#hotel-location option:selected').val();
+            var HasParking = $('#hotel-parking option:selected').val();
 
-            var apiUrl = 'https://localhost:44396/api/Reservation/FilterHotels'
+            var apiUrl = 'https://localhost:44396/api/Reservation/FilterHotels';
 
+            console.log(Rating);
+            console.log(HasIncludedFreeMeal);
+            console.log(Location);
+            console.log(HasParking);
             $.ajax({
 
-                url: apiUrl + "?ReservationStartDate=" + ReservationStartDate,
+                url: apiUrl,
+                data: JSON.stringify({
+                    ReservationStartDate: ReservationStartDate,
+                    ReservationEndDate: ReservationEndDate,
+                    Rating: Rating,
+                    Location: Location,
+                    HasParking: HasParking,
+                    HasIncludedFreeMeal:HasIncludedFreeMeal}),
+                //url: apiUrl + "?ReservationStartDate=" + ReservationStartDate + "?ReservationEndDate=" + ReservationEndDate  +"?Rating="+Rating+"?HasIncludedFreeMeal="+HasIncludedFreeMeal+"?Location="+Location+"?HasParking="+HasParking,
                 contentType: "application/json",
                 method:'POST',
                 dataType:'json',
@@ -564,9 +409,21 @@
 
                     $.each(result, function (i, obj) {
                         //use obj.id and obj.name here, for example:
-                        $('.archivment-front').text(obj.location);
-                        alert(obj.location);
-                        console.log(obj.location);
+                        //$('.archivment-front').text(obj.location);
+                        //alert(obj.location);
+                        console.log(obj.Location);
+                        console.log("haha");
+                        var htmltorender = '<div class="col-xl-4 col-lg-6 col-md-6"><div class="single-room mb-50"><div class="room-img"><a href="rooms.html"><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/3e/d0/a6/hotel-sirius.jpg" alt=""></a></div><div class="room-caption"><h3><a href="rooms.html">Emri i hotelit</a></h3><h4>Qyteti:</h4><h5>Nr dhomave:</h5><h4>Vleresimi:</h4></div></div><div class="shiko-hotelin" style="display:flex;justify-content:center;"><button type="button" class="btn btn-small" style="background-color:darkslateblue;margin-bottom:30px;">Shiko dhomat</button></div></div>';
+                        //$("#hotelsGrid.row :last").append(htmltorender);    
+                        //$("#hotelsGrid.row:nth-child(1)").after(htmltorender);
+                        //document.getElementById("hotelsGrid").append(htmltorender);
+                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
+                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
+                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
+                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
+                        
+                        console.log(htmltorender);
+
                     });
                 }
             });

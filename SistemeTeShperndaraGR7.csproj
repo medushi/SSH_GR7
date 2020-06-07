@@ -205,6 +205,7 @@
     <Compile Include="Models\Chat\User.cs" />
     <Compile Include="Models\Chat\UserCall.cs" />
     <Compile Include="Models\FilterHotels\FilterHotelsModel.cs" />
+    <Compile Include="Models\FilterHotels\HotelFullDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalR\Hubs\Chat.cs" />
     <Compile Include="SignalR\Hubs\Videochat.cs" />
@@ -306,6 +307,7 @@
     <Content Include="Content\images\reservationimages\hero\h1_hero.jpg" />
     <Content Include="Content\images\reservationimages\hero\roomspage_hero.jpg" />
     <Content Include="Content\images\reservationimages\hero\servicespage_hero.jpg" />
+    <Content Include="Content\images\reservationimages\hotels\swissdhotel.PNG" />
     <Content Include="Content\images\reservationimages\logo\date-picker-icon.png" />
     <Content Include="Content\images\reservationimages\logo\form-iocn.jpg" />
     <Content Include="Content\images\reservationimages\logo\logo.png" />

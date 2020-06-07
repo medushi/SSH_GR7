@@ -16,18 +16,41 @@ namespace SistemeTeShperndaraGR7.Controllers.api
 
         
         // GET api/<controller>/5
-        public List<Hotel> FilterHotels([FromUri] FilterHotelsModel filtermodel)
+        public List<HotelFullDataModel> FilterHotels([FromBody] FilterHotelsModel filtermodel)
         {
-            var result = ReservationServices.GetAllHotels();
-            if (filtermodel.Location != "Te gjitha")
-                result = result.Where(x => x.location == filtermodel.Location).ToList();
-            if (filtermodel.Rating != 0)
-                result = result.Where(x => x.rating == filtermodel.Rating).ToList();
-            if (filtermodel.HasIncludedFreeMeal !="Te gjitha")
+            var allhotels = ReservationServices.GetAllHotels();
+            var allhotelspecs = ReservationServices.GetAllHotelSpecs();
+            var result = new List<HotelFullDataModel>();
+
+            foreach(var hotel in allhotels)
             {
-                //e mofidikon me kthy ni model tjeter qe mushet...e bajm hotel_specs ne dictionary me id te hotelit manej mujm mi kqyr 
-                //edhe propery si hasincludedfreemeal,hasparking,hasconferenceroom.
-            }               
+                if (allhotelspecs.ContainsKey(hotel.id))
+                {
+                    result.Add(new HotelFullDataModel
+                    {
+                        HotelId=hotel.id,
+                        Name=hotel.name,
+                        Location=hotel.location,
+                        Rating=hotel.rating,
+                        HasConferenceRoom=allhotelspecs[hotel.id].hasConferenceRoom,
+                        HasFreeIncludedMeal=allhotelspecs[hotel.id].hasFreeBreakFast,
+                        HasParking=allhotelspecs[hotel.id].hasParking,
+                        TotalRooms=hotel.totalrooms
+                    });
+                }
+            }
+            if (filtermodel.Location != "All")
+                result = result.Where(x => x.Location == filtermodel.Location).ToList();
+            if (filtermodel.Rating != 0)
+                result = result.Where(x => x.Rating == filtermodel.Rating).ToList();
+            if (filtermodel.HasIncludedFreeMeal !=2)
+            {
+                result = result.Where(x => x.HasFreeIncludedMeal==Convert.ToBoolean(filtermodel.HasIncludedFreeMeal)).ToList();
+            }
+            if(filtermodel.HasParking!=2)
+            {
+                result = result.Where(x => x.HasParking == Convert.ToBoolean(filtermodel.HasParking)).ToList();
+            }
             return result;
         }
 
