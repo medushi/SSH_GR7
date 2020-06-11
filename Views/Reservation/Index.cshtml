@@ -413,7 +413,7 @@
                         //alert(obj.location);
                         console.log(obj.Location);
                         console.log("haha");
-                        var htmltorender = '<div class="col-xl-4 col-lg-6 col-md-6"><div class="single-room mb-50"><div class="room-img"><a href="rooms.html"><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/3e/d0/a6/hotel-sirius.jpg" alt=""></a></div><div class="room-caption"><h3><a href="rooms.html">Emri i hotelit</a></h3><h4>Qyteti:</h4><h5>Nr dhomave:</h5><h4>Vleresimi:</h4></div></div><div class="shiko-hotelin" style="display:flex;justify-content:center;"><button type="button" class="btn btn-small" style="background-color:darkslateblue;margin-bottom:30px;">Shiko dhomat</button></div></div>';
+                        var htmltorender = '<div class="col-xl-4 col-lg-6 col-md-6"><div class="single-room mb-50"><div class="room-img"><a href="rooms.html"><img src="https://media-cdn.tripadvisor.com/media/photo-s/07/3e/d0/a6/hotel-sirius.jpg" alt=""></a></div><div class="room-caption"><h4><a href="rooms.html">Emri i hotelit: '+obj.Name+'</a></h4><h4>Qyteti: ' +obj.Location+'</h4><h5>Nr dhomave: '+obj.TotalRooms+'</h5><h4>Vleresimi: '+obj.Rating+'</h4></div></div><div class="shiko-hotelin" style="display:flex;justify-content:center;"><button type="button" class="btn btn-small" id="'+obj.HotelId+'"style="background-color:darkslateblue;margin-bottom:30px;">Shiko dhomat</button></div></div>';
                         //$("#hotelsGrid.row :last").append(htmltorender);    
                         //$("#hotelsGrid.row:nth-child(1)").after(htmltorender);
                         //document.getElementById("hotelsGrid").append(htmltorender);
@@ -428,6 +428,19 @@
                 }
             });
 
+        });
+
+        $(document.body).on('click','.btn.btn-small', function () {
+            console.log(this.id);
+            $.ajax({
+                url: "PrepareRoomData",
+                data: { hotelid: this.id },
+                method: 'POST',
+                success: function (redirect) {
+                    window.location = redirect;
+                }
+
+            });
         });
     </script>
 </body>

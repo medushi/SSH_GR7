@@ -54,6 +54,10 @@ namespace SistemeTeShperndaraGR7.Controllers.api
             return result;
         }
 
+        public List<Room> GetRooms([FromUri]int hotelid)
+        {
+            return ReservationServices.GetAllRooms().Where(x => x.hotelId == hotelid).ToList();
+        }
         public int VeqTest([FromBody]int x)
         {
             return x + 10;
