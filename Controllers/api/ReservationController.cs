@@ -1,12 +1,14 @@
 ﻿using MySqlX.XDevAPI.Common;
 using SistemeTeShperndaraGR7.Database.Models;
 using SistemeTeShperndaraGR7.Database.Services;
+using SistemeTeShperndaraGR7.Models;
 using SistemeTeShperndaraGR7.Models.FilterHotels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web.Helpers;
 using System.Web.Http;
 
 namespace SistemeTeShperndaraGR7.Controllers.api
@@ -58,9 +60,19 @@ namespace SistemeTeShperndaraGR7.Controllers.api
         {
             return ReservationServices.GetAllRooms().Where(x => x.hotelId == hotelid).ToList();
         }
-        public int VeqTest([FromBody]int x)
+        public bool ReserveRoom([FromBody] ReserveRoomModel reserveRoomModel)
         {
-            return x + 10;
+            try
+            {
+                //change status of that room and insert into reservationtable like logs
+                ReservationServices.ReserveRoom(reserveRoomModel.RoomId, reserveRoomModel.HotelId, reserveRoomModel.Username);
+                return true;
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+
         }
        
     }

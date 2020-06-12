@@ -1,15 +1,107 @@
-﻿@model List<SistemeTeShperndaraGR7.Database.Models.Room>
+﻿@model List<SistemeTeShperndaraGR7.Models.FilterHotels.RoomFullDataModel>
 @{
-    Layout =null;
+    Layout = null; ;
 }
 
-<div>
-    @foreach(var room in Model)
-    {
-    <p>@room.numberOfBeds</p>
+@*<div>
+        @foreach(var room in Model)
+        {
+        <p>@room.numberOfBeds</p>
 
-    }
-</div>
+        }
+    </div>*@
+
+<
+<html lang="en">
+<head>
+    <title>Reservo Dhomen</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="container" style="float:left;width:50%;">
+            <h2>Dhomat e lira te @Model.Select(x=>x.HotelName).First().ToString()</h2>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Nr. i dhomes</th>
+                        <th>Nr i shtreterve</th>
+                        <th>Pamje nga deti</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.RoomId</td>
+                            <td>@item.NumberOfBeds</td>
+                            @if (item.HasSeaSight)
+                            {<td>PO</td>}
+                            @if (!item.HasSeaSight)
+                            { <td>JO</td>}
+                            <td hidden id="@item.HotelId">@item.HotelId</td>
+                            <td class="tocheck" ><input class="checkedRoom" type="checkbox" id="@item.RoomId" /></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+
+        </div>
+        <div class="form-reservation" style="float:left;">
+            <form>
+                <div class="form-group">
+                    <label for="useremail">Email addresa</label>
+                    <input type="email" class="form-control" id="useremail">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="button"class="btn-success" id="btnReserve" value="Rezervo"/>
+                </div>
+            </form>
+        </div>
+    </div>
+   
+
+</body>
+</html>
+
 <script>
-  
+    var roomId = 0;
+    var hotelId = 0;
+    $(".checkedRoom").on('click', function () {
+        roomId = this.id;
+        hotelId = $("td.tocheck").prev().eq(0).text();
+    });
+
+    $("#btnReserve").on('click', function () {
+        var userEmail = $("#useremail").val();
+        console.log(roomId);
+        console.log(hotelId);
+        console.log(userEmail);
+        $.ajax({
+            url: "https://localhost:44396/api/Reservation/ReserveRoom",
+            data: JSON.stringify({Username:userEmail,RoomId:roomId,HotelId:hotelId}),
+            method: 'POST',
+            contentType: "application/json",
+            success: function (response) {
+                if (response == false)
+                    alert("Rezervimi deshtoi!");
+                if (response == true)
+                    alert("Rezervimi u be me sukses!");
+            }
+
+        });
+    });
 </script>

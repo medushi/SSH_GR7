@@ -206,6 +206,8 @@
     <Compile Include="Models\Chat\UserCall.cs" />
     <Compile Include="Models\FilterHotels\FilterHotelsModel.cs" />
     <Compile Include="Models\FilterHotels\HotelFullDataModel.cs" />
+    <Compile Include="Models\FilterHotels\RoomFullDataModel.cs" />
+    <Compile Include="Models\ReserveRoomModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SignalR\Hubs\Chat.cs" />
     <Compile Include="SignalR\Hubs\Videochat.cs" />
