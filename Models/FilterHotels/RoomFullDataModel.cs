@@ -13,6 +13,8 @@ namespace SistemeTeShperndaraGR7.Models.FilterHotels
         public bool HasSeaSight { get; set; }
         public int NumberOfBeds { get; set; }
         public string Status { get; set; }
+        public string FromDate { get; set; }
+        public string DueDate { get; set; }
 
     }
 }

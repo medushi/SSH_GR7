@@ -10,6 +10,8 @@ namespace SistemeTeShperndaraGR7.Models
         public string Username { get; set; }
         public int RoomId { get; set; }
         public int HotelId { get; set; }
+        public string From { get; set; }
+        public string To { get; set; }
 
     }
 }

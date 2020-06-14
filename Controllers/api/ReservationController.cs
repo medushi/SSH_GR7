@@ -65,7 +65,7 @@ namespace SistemeTeShperndaraGR7.Controllers.api
             try
             {
                 //change status of that room and insert into reservationtable like logs
-                ReservationServices.ReserveRoom(reserveRoomModel.RoomId, reserveRoomModel.HotelId, reserveRoomModel.Username);
+                ReservationServices.ReserveRoom(reserveRoomModel.RoomId, reserveRoomModel.HotelId, reserveRoomModel.Username,reserveRoomModel.From,reserveRoomModel.To);
                 return true;
             }
             catch(Exception ex)

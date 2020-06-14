@@ -419,12 +419,6 @@
                         //$("#hotelsGrid.row:nth-child(1)").after(htmltorender);
                         //document.getElementById("hotelsGrid").append(htmltorender);
                         $("[id='hotelsGrid']").eq(1).append(htmltorender);
-                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
-                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
-                        $("[id='hotelsGrid']").eq(1).append(htmltorender);
-                        
-                        console.log(htmltorender);
-
                     });
                 }
             });
@@ -433,9 +427,11 @@
 
         $(document.body).on('click','.btn.btn-small', function () {
             console.log(this.id);
+            var ReservationStartDate = $('#datepicker1').datepicker("show").val();
+            var ReservationEndDate = $('#datepicker2').datepicker("show").val();
             $.ajax({
                 url: "PrepareRoomData",
-                data: { hotelid: this.id },
+                data: { hotelid: this.id, fromDate: ReservationStartDate, dueDate:ReservationEndDate },
                 method: 'POST',
                 success: function (redirect) {
                     window.location = redirect;

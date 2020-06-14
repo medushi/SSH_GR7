@@ -16,6 +16,8 @@ namespace SistemeTeShperndaraGR7.Controllers.Reservation
     {
         static List<Room> _roomsOfSpecificHotel = new List<Room>();
         static List<RoomFullDataModel> _roomsFullDataModel = new List<RoomFullDataModel>();
+        static string _fromDate;
+        static string _dueDate;
 
         // GET: Reservation
         public ActionResult Index()
@@ -35,15 +37,19 @@ namespace SistemeTeShperndaraGR7.Controllers.Reservation
                     HasSeaSight = room.hasSeaSight,
                     NumberOfBeds=room.numberOfBeds,
                     RoomId=room.id,
-                    Status=room.status
+                    Status=room.status,
+                    FromDate=_fromDate,
+                    DueDate=_dueDate                
                 });
             }
             return View(_roomsFullDataModel);
         }
         #region ModelPreparators
-        public ActionResult PrepareRoomData(int hotelid)
+        public ActionResult PrepareRoomData(int hotelid,string fromDate,string dueDate)
         {
             var roomsList = new List<Room>();
+            _fromDate = fromDate;
+            _dueDate = dueDate;
             using (WebClient client = new WebClient())
             {
                 var responseJson = client.DownloadString($"https://localhost:44396/api/Reservation/GetRooms?hotelid={hotelid}");

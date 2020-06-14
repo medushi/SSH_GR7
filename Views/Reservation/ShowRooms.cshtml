@@ -26,6 +26,8 @@
     <div class="container">
         <div class="container" style="float:left;width:50%;">
             <h2>Dhomat e lira te @Model.Select(x=>x.HotelName).First().ToString()</h2>
+            <p id="ngaData" hidden>@Model.Select(x=>x.FromDate).First().ToString()</p>
+            <p id="deriMe" hidden>@Model.Select(x=>x.DueDate).First().ToString()</p>
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -63,7 +65,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Example textarea</label>
+                    <label for="exampleFormControlTextarea1">Ndonje koment</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
                 <div class="form-group">
@@ -71,6 +73,10 @@
                 </div>
             </form>
         </div>
+    </div>
+    <div>
+        <input id="binaryLocalDate" type="button" value="Data aktuale ne binary"/>
+        <p id="datanebinary"></p>
     </div>
    
 
@@ -87,12 +93,11 @@
 
     $("#btnReserve").on('click', function () {
         var userEmail = $("#useremail").val();
-        console.log(roomId);
-        console.log(hotelId);
-        console.log(userEmail);
+        var prej = $("#ngaData").text();
+        var deri = $("#deriMe").text();
         $.ajax({
             url: "https://localhost:44396/api/Reservation/ReserveRoom",
-            data: JSON.stringify({Username:userEmail,RoomId:roomId,HotelId:hotelId}),
+            data: JSON.stringify({Username:userEmail,RoomId:roomId,HotelId:hotelId,From:prej,To:deri}),
             method: 'POST',
             contentType: "application/json",
             success: function (response) {
@@ -100,6 +105,17 @@
                     alert("Rezervimi deshtoi!");
                 if (response == true)
                     alert("Rezervimi u be me sukses!");
+            }
+
+        });
+    });
+
+    $("#binaryLocalDate").on('click', function () {
+        $.ajax({
+            url: "http://localhost:1010/Date/binary",
+            method: 'GET',
+            success: function (response) {
+                $('#datanebinary').text(response);
             }
 
         });
