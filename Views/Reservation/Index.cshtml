@@ -81,7 +81,7 @@
                                                 <li><a href="elements.html">Element</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a href="@Url.Action("Chat","Chat")">Chat</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -409,7 +409,6 @@
                     console.log(result);
 
                     $.each(result, function (i, obj) {
-                        //use obj.id and obj.name here, for example:
                         //$('.archivment-front').text(obj.location);
                         //alert(obj.location);
                         console.log(obj.Location);
